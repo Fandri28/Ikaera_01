@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: radial-gradient(circle, #dde3e6 5px, transparent 4px);
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: #373131;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  background-size: 10px 10px; /* 5px dot + 5px spacing */
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 64px; /* Adjust this value based on the height of your navbar */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+}
+@keyframes sparkle {
+  0% {
+    transform: scale();
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+.sparkle {
+  animation: sparkle 1.5s infinite alternate;
+}
